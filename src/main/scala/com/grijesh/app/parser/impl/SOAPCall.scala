@@ -17,7 +17,7 @@ class SOAPCall {
     var request:SoapObject = new SoapObject(namespace,webMethodName)
     request = addProperties(request,properties)
     val envelope:SoapSerializationEnvelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-    // if service is created in dot net
+    // Set this variable to true for compatibility with what seems to be the default encoding for .Net-Services
     envelope.dotNet = true
     envelope.setOutputSoapObject(request)
     realCall(webMethodName,envelope)
